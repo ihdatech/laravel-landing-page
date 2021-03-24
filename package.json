@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-poll",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+  "devDependencies": {
+    "axios": "^1.6.7",
+    "bootstrap": "^5.3.3",
+    "cross-env": "^7.0.3",
+    "jquery": "^3.7.1",
+    "laravel-mix": "^6.0.49",
+    "lodash": "^4.17.21",
+    "postcss": "^8.4.35",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.71.1",
+    "sass-loader": "^14.1.1",
+    "vue": "^3.4.21",
+    "@vue/compiler-sfc": "^3.4.21"
+  },
+  "name": "laravel-landing-page",
+  "description": "Build a landing page web site for resume using the Laravel.",
+  "version": "1.0.0",
+  "main": "webpack.mix.js",
+  "directories": {
+    "test": "tests"
+  },
+  "author": "",
+  "license": "ISC"
+}
