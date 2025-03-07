@@ -1,0 +1,54 @@
+/* Global Styles */
+@import 'variables.css';
+
+body {
+    color: var(--text-dark);
+    background: var(--bg-primary);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    padding-top: 60px;
+}
+
+/* Sections */
+.section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .header {
+        background: none !important;
+        color: var(--text-dark) !important;
+    }
+    
+    .nav-wrapper,
+    .social-buttons,
+    .download-button {
+        display: none !important;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+    }
+} 
