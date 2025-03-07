@@ -1,0 +1,33 @@
+/* Modern Color Palette */
+:root {
+    --primary-color: #6C5CE7;      /* Soft Purple */
+    --secondary-color: #00D2D3;    /* Turquoise */
+    --accent-color: #FD79A8;       /* Pink */
+    --success-color: #00B894;      /* Green */
+    --warning-color: #FDCB6E;      /* Yellow */
+    
+    /* Text Colors */
+    --text-dark: #2C3E50;
+    --text-light: #636E72;
+    --text-muted: #B2BEC3;
+    
+    /* Background Colors */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8F9FA;
+    --bg-light: #F1F2F6;
+    --bg-dark: #2D3436;
+    
+    /* Border Colors */
+    --border-color: #E8E8E8;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #6C5CE7, #00D2D3);
+    --gradient-secondary: linear-gradient(135deg, #00D2D3, #FD79A8);
+    --gradient-success: linear-gradient(135deg, #00B894, #00D2D3);
+    --gradient-warning: linear-gradient(135deg, #FDCB6E, #FD79A8);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(108, 92, 231, 0.1);
+    --shadow-md: 0 4px 8px rgba(108, 92, 231, 0.15);
+    --shadow-lg: 0 8px 16px rgba(108, 92, 231, 0.2);
+} 
