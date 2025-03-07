@@ -2,6 +2,35 @@
 
 All notable changes are documented in this file using the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## [3.0.6] - 2023-03-02
+
+### Changed
+
+* Do not use implicitly nullable parameters
+
+## [3.0.5] - 2023-03-01
+
+* No code changes, only updated `.gitattributes` to not export non-essential files.
+
+## [3.0.4] - 2023-05-07
+
+### Changed
+
+* [#118](https://github.com/sebastianbergmann/diff/pull/118): Improve performance of `MemoryEfficientLongestCommonSubsequenceCalculator`
+* [#119](https://github.com/sebastianbergmann/diff/pull/119): Improve performance of `TimeEfficientLongestCommonSubsequenceCalculator`
+
+## [3.0.3] - 2020-11-30
+
+### Changed
+
+* Changed PHP version constraint in `composer.json` from `^7.1` to `>=7.1`
+
+## [3.0.2] - 2019-02-04
+
+### Changed
+
+* `Chunk::setLines()` now ensures that the `$lines` array only contains `Line` objects
+
 ## [3.0.1] - 2018-06-10
 
 ### Fixed
@@ -40,6 +69,11 @@ All notable changes are documented in this file using the [Keep a CHANGELOG](htt
 
 * This component is no longer supported on PHP 5.6
 
+[3.0.6]: https://github.com/sebastianbergmann/diff/compare/3.0.5...3.0.6
+[3.0.5]: https://github.com/sebastianbergmann/diff/compare/3.0.4...3.0.5
+[3.0.4]: https://github.com/sebastianbergmann/diff/compare/3.0.3...3.0.4
+[3.0.3]: https://github.com/sebastianbergmann/diff/compare/3.0.2...3.0.3
+[3.0.2]: https://github.com/sebastianbergmann/diff/compare/3.0.1...3.0.2
 [3.0.1]: https://github.com/sebastianbergmann/diff/compare/3.0.0...3.0.1
 [3.0.0]: https://github.com/sebastianbergmann/diff/compare/2.0...3.0.0
 [2.0.1]: https://github.com/sebastianbergmann/diff/compare/c341c98ce083db77f896a0aa64f5ee7652915970...2.0.1

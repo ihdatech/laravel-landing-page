@@ -1,131 +1,167 @@
 @extends('resume.global')
+
 @section('content.experiences')
-        @if(is_array($experiences))
-            @foreach(array_reverse($experiences) as $array)
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">{{ $array['place'] }}</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt mr-1"></i> {{ $array['location'] }}</div>
-                    </div>
-                    <div class="job-meta">
-                        <!-- <div class="title">Senior Software Engineer</div> -->
-                        <div class="title">{{ $array['title'] }}</div>
-                        <div class="time">{{ $array['time'] }}</div>
-                    </div>
-                    <!--//job-meta-->
-                    <div class="job-desc">
-                        <!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p> -->
-                        <!-- <ul>
-                            <li>Lorem ipsum dolor sit amet</li>
-                            <li>Donec pede justo ante</li>
-                            <li>Maecenas tempus tellus eget </li>
-                        </ul> -->
-                    </div>
-                    <!--//job-desc-->
+    @foreach($experiences as $experience)
+        <div class="item">
+            <div class="job-meta">
+                <div class="col-left">
+                    <div class="title">{{ $experience['Position'] }}</div>
                 </div>
-                <!--//item-->
-            @endforeach
-        @endif
-            @foreach($experiences as $array)
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">{{ $array['Place'] }}</h3>
+                <div class="col-right">
+                    <div class="time">{{ $experience['Date'] }}</div>
+                </div>
+            </div>
+            <div class="work-place">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 class="place">{{ $experience['Company'] }}</h3>
+                    </div>
+                    <div class="col-md-4 text-md-right">
                         <div class="location">
-                            <!-- material -->
-                            <i class="material-icons mdc-button__icon" aria-hidden="true">location_on</i>
-                            {{ $array['Location'] }}
+                            <i class="fas fa-map-marker-alt mr-1"></i>{{ $experience['Location'] }}
                         </div>
                     </div>
-                    <div class="job-meta">
-                        <!-- <div class="title">Senior Software Engineer</div> -->
-                        <div class="title">{{ $array['Position'] }}</div>
-                        <div class="time">{{ $array['Date'] }}</div>
-                    </div>
-                    <!--//job-meta-->
-                    <div class="job-desc">
-                        <!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p> -->
-                        <!-- <ul>
-                            <li>Lorem ipsum dolor sit amet</li>
-                            <li>Donec pede justo ante</li>
-                            <li>Maecenas tempus tellus eget </li>
-                        </ul> -->
-                    </div>
-                    <!--//job-desc-->
                 </div>
-                <!--//item-->
-            @endforeach
-@endsection
-@section('content.education')
-            @foreach($educations as $array)
-                <div class="item col-12 col-md-4">
-                    <div class="item-inner">
-                        <h3 class="degree">{{ $array['Degree'] }}</h3>
-                        <div class="education-body">{{ $array['Education'] }}</div>
-                        <!--//education-body-->
-                        <div class="time">{{ $array['Time'] }}</div>
-                        <!-- <div class="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient</div> -->
-                    </div>
-                    <!--//item-inner-->
-                </div>
-                <!--//item-->
-            @endforeach
-@endsection
-@section('content.top-skills')
-            @if(is_array($top))
-                @foreach($top as $array)
-                    <div class="item col-12 col-md-4">
-                        <div class="item-inner">
-                            <div class="chart-easy-pie text-center">
-                                <div class="chart-theme-1 chart" data-percent="{{ $array['percent'] }}"><span>{{ $array['percent'] }}</span>%</div>
-                            </div>
-                            <h4 class="skill-name">{{ $array['skill'] }}</h4>
-                            <div class="level">{{ $array['level'] }}</div>
-                            <!-- <div class="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient</div> -->
-                        </div>
-                        <!--//item-inner-->
-                    </div>
-                    <!--//item-->
-                @endforeach
-            @endif
-@endsection
-@section('content.other-skills')
-                @foreach($languages as $array)
-                    <span class="skill-tag">{{ $array['Name'] }}</span>
-                @endforeach
-                    <br>
-                @foreach($frameworks as $array)
-                    <span class="skill-tag">{{ $array['Name'] }}</span>
-                @endforeach
-                    <br>
-                @foreach($softwares as $array)
-                    <span class="skill-tag">{{ $array['Name'] }}</span>
-                @endforeach
-@endsection
-@section('content.portfolio')
-            @foreach($portfolio as $array)
-                <div class="item {{ $array['Platform'] }} col-lg-3 col-6">
-                    <div class="item-inner">
-                        <figure class="figure">
-                            <!-- <img class="img-fluid" src="assets/images/portfolio/portfolio-2.png" alt="" /> -->
-                        </figure>
-                        <div class="content text-left">
-                            <h3 class="sub-title"><a href="#">{{ $array['Application'] }}</a></h3>
-                            <div class="meta">{{ $array['Place'] }}</div>
-                            <div class="meta">{{ $array['Languages'] }} {{ $array['Framework'] }}</div>
-                            <div class="action"><a href="#">{{ $array['Platform'] }}</a></div>
-                        </div>
-                        <!--//content-->
-                        <a class="link-mask" href="#"></a>
-                    </div>
-                    <!--//item-inner-->
-                </div>
-                <!--//item-->
-            @endforeach
-@endsection
-@section('content.checklist')
-                @if(is_array($checklist))
-                    @foreach($checklist as $array)
-                        <li><i class="fas fa-check" aria-hidden="true"></i> {{ $array }}</li>
+            </div>
+            <div class="job-desc">
+                @if($experience['Description'])
+                    @foreach(explode("\n", $experience['Description']) as $line)
+                        <p>{{ $line }}</p>
                     @endforeach
                 @endif
+            </div>
+        </div>
+    @endforeach
+@endsection
+
+@section('content.education')
+    @foreach($educations as $education)
+        <div class="item col-12 col-md-4">
+            <div class="item-inner">
+                <h3 class="degree">{{ $education['Degree'] }}</h3>
+                <div class="education-body">
+                    {{ $education['School'] ?? $education['Education'] }}
+                </div>
+                <div class="time">{{ $education['Time'] }}</div>
+            </div>
+        </div>
+    @endforeach
+@endsection
+
+@section('content.top-skills')
+    @foreach($languages as $language)
+        @if(in_array($language['Name'], ['Java & Android', 'Kotlin & Android', 'Dart & Flutter']))
+            <div class="item col-12 col-md-4">
+                <div class="item-inner">
+                    <div class="chart-easy-pie text-center">
+                        @php
+                            $skillData = [
+                                'Java & Android' => ['percent' => 90, 'level' => 'Expert'],
+                                'Kotlin & Android' => ['percent' => 90, 'level' => 'Expert'],
+                                'Dart & Flutter' => ['percent' => 80, 'level' => 'Advanced']
+                            ];
+                            $percent = $skillData[$language['Name']]['percent'];
+                            $level = $skillData[$language['Name']]['level'];
+                            $startDate = new DateTime($language['StartDate']);
+                            $now = new DateTime();
+                            $interval = $startDate->diff($now);
+                            $years = $interval->y;
+                        @endphp
+                        <div class="chart-theme-1 chart" data-percent="{{ $percent }}"><span>{{ $percent }}</span>%</div>
+                    </div>
+                    <h4 class="skill-name">{{ $language['Name'] }}</h4>
+                    <div class="level">{{ $level }}, {{ $years }} years</div>
+                </div>
+            </div>
+        @endif
+    @endforeach
+@endsection
+
+@section('content.other-skills')
+    <h4>Languages</h4>
+    @foreach($languages as $language)
+        @php
+            $displayName = explode(' & ', $language['Name'])[0];
+        @endphp
+        <span class="skill-tag">{{ $displayName }}</span>
+    @endforeach
+
+    <h4 class="mt-4">Frameworks</h4>
+    @foreach($frameworks as $framework)
+        <span class="skill-tag">{{ $framework['Name'] }}</span>
+    @endforeach
+
+    <h4 class="mt-4">Architectures & Design Patterns</h4>
+    @foreach($architectures as $architecture)
+        <span class="skill-tag">{{ $architecture['Name'] }}</span>
+    @endforeach
+    @foreach($designPatterns as $pattern)
+        <span class="skill-tag">{{ $pattern['Name'] }}</span>
+    @endforeach
+
+    <h4 class="mt-4">Tools & Software</h4>
+    @foreach($softwares as $software)
+        <span class="skill-tag">{{ $software['Name'] }}</span>
+    @endforeach
+@endsection
+
+@section('content.portfolio')
+    <div class="section-inner">
+        <div class="portfolio-grid">
+            <div class="row">
+                @foreach($portfolio as $project)
+                    @php
+                        $platformClass = $project['Platform'];
+                    @endphp
+                    <div class="item {{ $platformClass }} col-lg-3 col-md-6 col-12 mb-4">
+                        <div class="item-inner rounded shadow-sm">
+                            <div class="content text-left p-3">
+                                <h3 class="sub-title mb-2">
+                                    <a class="text-light" href="#">{{ $project['Application'] }}</a>
+                                </h3>
+                                <div class="meta-info">
+                                    <div class="company text-light mb-1">{{ $project['Company'] }}</div>
+                                    <div class="tech text-lights">
+                                        {{ $project['Languages'] }}
+                                        @if($project['Framework'])
+                                            & {{ $project['Framework'] }}
+                                        @endif
+                                    </div>
+                                    <div class="platform mt-2">
+                                        <span class="badge badge-secondary">{{ $project['Platform'] }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('content.profile')
+    <div class="profile">
+        @php
+            $firstExperience = new DateTime('2017-06-01');
+            $now = new DateTime();
+            $experience = $now->diff($firstExperience)->y;
+            $description = str_replace(
+                'over 7 years',
+                'over ' . $experience . ' years',
+                $profiles['Description']
+            );
+        @endphp
+        <p>{{ $description }}</p>
+    </div>
+@endsection
+
+@section('content.checklist')
+    <li><span class="material-symbols-outlined">check_circle</span> Android App development with Java</li>
+    <li><span class="material-symbols-outlined">check_circle</span> Android App development with Kotlin</li>
+    <li><span class="material-symbols-outlined">check_circle</span> Android/iOS App development with Flutter</li>
+    <li><span class="material-symbols-outlined">check_circle</span> Back-end development with CodeIgniter/PHP</li>
+    <li><span class="material-symbols-outlined">check_circle</span> Back-end development with Flask/Python</li>
+    <li><span class="material-symbols-outlined">check_circle</span> RESTful API development with Slim Framework</li>
+    <li><span class="material-symbols-outlined">check_circle</span> RESTful API development with Lumen</li>
 @endsection

@@ -23,4 +23,5 @@ Route::get('/languages', 'LanguagesController@getAll');
 Route::get('/profiles', 'ProfilesController@getAll');
 Route::get('/softwares', 'SoftwaresController@getAll');
 
+Route::get('/download', 'DownloadController@index');
 Route::get('/resume', 'ResumeController@index');

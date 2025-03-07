@@ -29,6 +29,9 @@ class Swift_Mime_SimpleHeaderFactory implements Swift_Mime_CharsetObserver
     /** The charset of created Headers */
     private $charset;
 
+    /** Swift_AddressEncoder */
+    private $addressEncoder;
+
     /**
      * Creates a new SimpleHeaderFactory using $encoder and $paramEncoder.
      *
@@ -65,8 +68,7 @@ class Swift_Mime_SimpleHeaderFactory implements Swift_Mime_CharsetObserver
     /**
      * Create a new Date header using $dateTime.
      *
-     * @param string                 $name
-     * @param DateTimeInterface|null $dateTime
+     * @param string $name
      *
      * @return Swift_Mime_Header
      */
@@ -111,7 +113,7 @@ class Swift_Mime_SimpleHeaderFactory implements Swift_Mime_CharsetObserver
      */
     public function createParameterizedHeader($name, $value = null, $params = [])
     {
-        $header = new Swift_Mime_Headers_ParameterizedHeader($name, $this->encoder, ('content-disposition' == strtolower($name)) ? $this->paramEncoder : null);
+        $header = new Swift_Mime_Headers_ParameterizedHeader($name, $this->encoder, ('content-disposition' == strtolower($name ?? '')) ? $this->paramEncoder : null);
         if (isset($value)) {
             $header->setFieldBodyModel($value);
         }
@@ -180,6 +182,7 @@ class Swift_Mime_SimpleHeaderFactory implements Swift_Mime_CharsetObserver
     {
         $this->encoder = clone $this->encoder;
         $this->paramEncoder = clone $this->paramEncoder;
+        $this->addressEncoder = clone $this->addressEncoder;
     }
 
     /** Apply the charset to the Header */

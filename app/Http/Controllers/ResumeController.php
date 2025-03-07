@@ -10,6 +10,8 @@ use App\Models\Languages;
 use App\Models\Portfolio;
 use App\Models\Profiles;
 use App\Models\Softwares;
+use App\Models\Architectures;
+use App\Models\DesignPatterns;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,6 +23,7 @@ class ResumeController extends Controller
             'image' => 'assets/images/profile-image.png',
             'email' => 'ihdatech@gmail.com',
             'phone' => ' 085727116115',
+            'about' => Profiles::all()[0]['Description'],
             'experiences' => Experiences::all(),
             'frameworks' => Frameworks::all(),
             'languages' => Languages::all(),
@@ -28,6 +31,8 @@ class ResumeController extends Controller
             'profiles' => Profiles::first(),
             'softwares' => Softwares::all(),
             'educations' => Educations::all(),
+            'architectures' => Architectures::all(),
+            'designPatterns' => DesignPatterns::all(),
             'top' => [
                 [
                     'percent' => '90',
@@ -56,5 +61,5 @@ class ResumeController extends Controller
             ],
         ];
         return view('resume.index', $data);
-    }    
+    }
 }
